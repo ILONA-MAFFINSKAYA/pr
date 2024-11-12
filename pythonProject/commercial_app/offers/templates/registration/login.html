@@ -1,0 +1,28 @@
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{% static 'offers/css/style.css' %}">
+<body>
+    <header>
+        <img src="{% static 'offers/images/logo.png' %}" alt="Logo">
+    </header>
+
+    <div class="center">
+        <h1>Авторизация</h1>
+        <br>
+        <form class="login_form" method="post">
+            {% csrf_token %}
+            <label for="username">Имя пользователя</label>
+            {{ form.username }}
+            <label for="password">Пароль</label>
+            {{ form.password }}
+            <br>
+            <button type="submit" style="font-family: serif" class="button">ВОЙТИ</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Commercial App</p>
+    </footer>
+</body>

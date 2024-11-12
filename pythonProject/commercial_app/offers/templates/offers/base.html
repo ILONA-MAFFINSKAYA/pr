@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Личный кабинет менеджера{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'offers/css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <img src="{% static 'offers/images/logo.png' %}" alt="Logo" class="logo">
+        <h1 style="margin-top: 50px">Привет, {{ user.last_name }} {{ user.first_name }} {{ user.middle_name }}!<a href="{% url 'home' %}" class="logout-button" style="font-family: serif">ВЫХОД</a></h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'create_offer' %}">Создать новое коммерческое предложение</a>
+        <a href="{% url 'offer_list' %}">Список коммерческих предложений</a>
+        <a href="{% url 'create_product' %}">Добавить товар/услугу/программное обеспечение</a>
+        <a href="{% url 'product_list' %}">Список товаров/услуг/программного обеспечения</a>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Commercial App</p>
+    </footer>
+</body>
+</html>

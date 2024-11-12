@@ -1,0 +1,12 @@
+{% extends 'offers/base.html' %}
+
+{% block title %}Создать продукт{% endblock %}
+
+{% block content %}
+<h1>Добавить продукт в БД</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">СОХРАНИТЬ В ПРОГРАММЕ</button>
+</form>
+{% endblock %}

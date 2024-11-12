@@ -1,0 +1,15 @@
+{% extends 'offers/base.html' %}
+
+{% block title %}Реестр КП{% endblock %}
+
+{% block content %}
+<h1>Реестр КП</h1>
+<ul>
+    {% for offer in offers %}
+        <li>
+            <a href="{% url 'offer_detail' offer.id %}">{{ offer.number }}</a> - {{ offer.date }}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
